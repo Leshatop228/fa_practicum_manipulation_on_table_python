@@ -1,0 +1,1 @@
+# fa_practicum_manipulation_on_table_python
