@@ -62,7 +62,7 @@ def get_column_type(table, by_number=False):
         else:
             column_type = "str"
 
-        key = i if by_number else headers[i]
+        key = (index if by_number else headers[index])
         dct[key] = column_type
 
     return dct
@@ -76,8 +76,8 @@ def set_column_type(table, type_dict=None, by_number=False):
     headers = table["headers"]
     dct = {}
 
-    for i in range(len(headers)):
-        check_val = data[0][i]
+    for index in range(len(headers)):
+        check_val = data[0][index]
 
         if check_val.isdigit():
             column_type = "int"
@@ -88,7 +88,7 @@ def set_column_type(table, type_dict=None, by_number=False):
         else:
             column_type = "str"
 
-        key = (i if by_number==True else headers[i])
+        key = (index if by_number==True else headers[index])
         dct[key] = column_type
 
 
@@ -110,8 +110,8 @@ def set_values(table, value, column=0):
 
 
 
-    for i, val in enumerate(value):
-        table["data"][i][column] = val
+    for index, val in enumerate(value):
+        table["data"][index][column] = val
 
     return table
 
